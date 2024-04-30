@@ -1,0 +1,15 @@
+version: '26'
+
+services:
+  users_db:
+    container_name: users_db
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: users
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
